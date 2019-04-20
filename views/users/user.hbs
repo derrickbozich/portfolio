@@ -1,0 +1,12 @@
+<div class="user-page">
+  <h1>User Page</h1>
+  Email:
+  {{ user.email }}
+  <br>
+  ID:
+  {{ user._id }}
+  <br>
+  <form action="/users/{{user._id}}?_method=DELETE" method="POST">
+    <input class="btn btn-primary" type="submit" value="delete">
+  </form>
+</div>

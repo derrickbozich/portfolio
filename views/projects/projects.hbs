@@ -1,0 +1,30 @@
+<div class="projects-page">
+  <h1>Projects Page</h1>
+  <div class="wrap">
+
+    {{#each projects}}
+      <div class="project project{{this._id}}">
+        <a href="/projects/{{{this._id}}}">
+          <div class="project-image">
+
+          </div>
+          <div class="project-info">
+            <div class="project-title">
+              Title: {{ this.title }}
+            </div>
+            <div class="project-description">
+              description: {{ this.description }}
+            </div>
+            <form action="/projects/{{this._id}}?_method=DELETE" method="POST">
+              <input class="btn btn-primary" type="submit" value="delete">
+            </form>
+          </div>
+        </a>
+
+      </div>
+
+    {{/each }}
+
+  </div>
+
+</div>

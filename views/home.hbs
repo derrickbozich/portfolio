@@ -1,0 +1,26 @@
+<div class="home-page">
+  <!-- <div class="bkg-text container"> 
+    My Works
+  </div> -->
+
+  <div class="wrap slideshow-container container">
+
+    {{#each projects}}
+
+      {{> project project=this }}
+
+    {{/each }}
+
+
+    <!-- Next and previous buttons -->
+ <a class="prev">&#10094;</a>
+ <a class="next">&#10095;</a>
+  </div>
+  <!-- The dots/circles -->
+  <div class="dot-container container">
+    <div class="dot-index"></div>
+    <div class="dots"></div>
+  </div>
+
+
+</div>

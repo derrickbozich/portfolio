@@ -1,0 +1,29 @@
+<div class="users-page">
+  <h1>Users Page</h1>
+  <div class="wrap">
+
+    {{#each users}}
+      <div class="user user{{this._id}}">
+        <a href="/users/{{{this._id}}}">
+          <div class="user-image">
+
+          </div>
+          <div class="user-info">
+            <div class="user-email">
+              Email: {{ this.email }}
+            </div>
+            <div class="user-id">
+              id: {{ this._id }}
+            </div>
+          </div>
+        </a>
+        <form action="/users/{{this._id}}?_method=DELETE" method="POST">
+          <input class="btn btn-primary" type="submit" value="delete">
+        </form>
+      </div>
+
+    {{/each }}
+
+  </div>
+
+</div>
