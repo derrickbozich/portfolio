@@ -14,7 +14,9 @@ const projects = require('./routes/api/projects');
 const bodyParser = require('body-parser');
 const config = require('config');
 const methodOverride = require('method-override');
+const path = require('path');
 const app = express();
+
 
 //Body Parser Middleware
 app.use(bodyParser.json());
@@ -50,6 +52,10 @@ app.use(function(req, res, next) {
   // continue doing what we were doing and go to the route
   next();
 });
+
+const favicon = require('serve-favicon');
+
+app.use(favicon(path.join(__dirname,'public','img','favicon.jpg')));
 
 // apply the routes to our application
 app.use('/', index);
